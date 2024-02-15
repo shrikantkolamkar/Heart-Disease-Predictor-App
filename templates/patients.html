@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #5073fb;
+            color: white;
+        }
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .search-box input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+        .search-box input[type="submit"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #5073fb;
+            color: white;
+            cursor: pointer;
+        }
+        .action-btns {
+            cursor: pointer;
+            color: blue;
+            margin-right: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #5073fb;
+            color: white;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Records</h1>
+        <div class="search-box">
+            <input type="text" id="searchQuery" placeholder="Search by name...">
+            <input type="submit" value="Search" onclick="searchRecords()">
+        </div>
+        <table>
+            <tr>
+<!--                <th>ID</th>-->
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Department</th>
+                <th>Date Time</th>
+                <th>Reason</th>
+                <th>Actions</th>
+            </tr>
+            <!-- This is where you would loop through the records and create a table row for each one -->
+            {% for record in records %}
+            <tr>
+<!--                <td>{{ record["_id"] }}</td>-->
+                <td>{{ record["name"] }}</td>
+                <td>{{ record["age"] }}</td>
+                <td>{{ record["gender"] }}</td>
+                <td>{{ record["email"] }}</td>
+                <td>{{ record["phone"] }}</td>
+                <td>{{ record["address"] }}</td>
+                <td>{{ record["department"] }}</td>
+                <td>{{ record["date_time"] }}</td>
+                <td>{{ record["reason"] }}</td>
+                <td>
+                    <span class="action-btns" onclick="editRecord('{{ record["_id"] }}')">Edit</span>
+                    <span class="action-btns" onclick="deleteRecord('{{ record["_id"] }}')">Delete</span>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+<script>
+    <script>
+    function searchRecords() {
+        var query = document.getElementById('searchQuery').value;
+        window.location.href = '/search?query=' + query;
+    }
+
+    function editRecord(id) {
+        window.location.href = '/edit/' + id;
+    }
+
+    function deleteRecord(id) {
+        if (confirm("Are you sure you want to delete this record?")) {
+            // Send a POST request to the delete route
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/delete/' + id, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    // Reload the page to reflect the updated records
+                    window.location.reload();
+                }
+            };
+            xhr.send();
+        }
+    }
+</script>
+
+    }
+</script>
+
+</body>
+</html>

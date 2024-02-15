@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointment Confirmed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Remove flexbox centering if you prefer a different layout */
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .appointment-details {
+            text-align: left;
+        }
+        .appointment-details span {
+            display: block;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .confirmation-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 80%;
+            margin: 0 auto; /* Center horizontally */
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        h2 {
+            color: #2980b9;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .confirm-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="confirmation-container">
+            <h1>Review Information</h1>
+            <p>Please review the information you submitted:</p>
+            <ul>
+                <li><strong>Name:</strong> {{ patient.name }}</li>
+                <li><strong>Age:</strong> {{ patient.Age }}</li>
+                <li><strong>Gender:</strong> {{ patient.Gender }}</li>
+                <li><strong>Email:</strong> {{ patient.email }}</li>
+                <li><strong>Phone:</strong> {{ patient.phone }}</li>
+                <li><strong>Address:</strong> {{ patient.address }}</li>
+                <li><strong>Department:</strong> {{ patient.department }}</li>
+                <li><strong>Date and Time:</strong> {{ patient.date_time }}</li>
+                <li><strong>Reason:</strong> {{ patient.reason }}</li>
+            </ul>
+            <p>If everything looks correct, proceed to confirm your appointment. If not, please go back and make changes.</p>
+            <a href="dashboard.html" class="confirm-button">Confirm Appointment</a>
+        </div>
+    </div>
+</body>
+</html>

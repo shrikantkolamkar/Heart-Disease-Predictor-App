@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Health Survey</title>
+    <style>
+        body {
+          font-family: sans-serif;
+          margin: 20px;
+        }
+
+        h1 {
+          text-align: center;
+        }
+
+        form {
+          border: 1px solid #ddd;
+          padding: 20px;
+          border-radius: 5px;
+        }
+
+        h2 {
+          margin-top: 20px;
+        }
+
+        .form-group {
+          margin-bottom: 15px;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        select, textarea {
+          width: 100%;
+          padding: 5px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+        }
+
+        textarea {
+          resize: vertical;
+        }
+
+        button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: #3e8e41;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Heart Health Survey</h1>
+
+    <form id="survey-form">
+        <h2>General Information</h2>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div class="form-group">
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Female</option>
+            </select>
+        </div>
+
+        <h2>Chest Pain</h2>
+        <div class="form-group">
+            <label for="chest-pain">Do you experience chest pain?</label>
+            <select id="chest-pain" name="chest-pain">
+                <option value="none">No</option>
+                <option value="aching">Aching</option>
+                <option value="tightness">Tightness</option>
+                <option value="burning">Burning</option>
+                <option value="sharp">Sharp</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="angina">Does your chest pain worsen with exertion?</label>
+            <select id="angina" name="angina">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <h2>Heart Health History</h2>
+        <div class="form-group">
+            <label for="high-blood-pressure">Do you have high blood pressure?</label>
+            <select id="high-blood-pressure" name="high-blood-pressure">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cholesterol-check">How often do you have your cholesterol checked?</label>
+            <select id="cholesterol-check" name="cholesterol-check">
+                <option value="never">Never</option>
+                <option value="yearly">Every year</option>
+                <option value="few-years">Every few years</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="diabetes">Do you have diabetes?</label>
+            <select id="diabetes" name="diabetes">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="heart-condition">Have you been diagnosed with any heart conditions?</label>
+            <select id="heart-condition" name="heart-condition">
+                <option value="no">No</option>
+                <option value="yes">Yes (Please specify in other notes)</option>
+            </select>
+        </div>
+
+        <h2>Lifestyle</h2>
+        <div class="form-group">
+            <label for="activity">How active are you on a daily basis?</label>
+            <select id="activity" name="activity">
+                <option value="very-active">Very active</option>
+                <option value="moderately-active">Moderately active</option>
+                <option value="slightly-active">Slightly active</option>
+                <option value="not-active">Not active</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="smoking">Do you smoke cigarettes?</label>
+            <select id="smoking" name="smoking">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="alcohol">How much alcohol do you drink on average per week?</label>
+            <select id="alcohol" name="alcohol">
+                <option value="none">None</option>
+                <option value="1-2-drinks">1-2 drinks</option>
+                <option value="3-5-drinks">3-5 drinks</option>
+                <option value="more-than-5-drinks">More than 5 drinks</option>
+            </select>
+        </div>
+
+        <h2>Additional Notes</h2>
+        <div class="form-group">
+            <label for="notes">Please share any other details you think might be relevant to your heart health (optional):</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Submit Survey</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

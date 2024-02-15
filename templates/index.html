@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <style>
+        html {
+          background-color: #10151B;
+          background: url(https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg) no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+
+        body {
+          font-family: "Oswald", sans-serif;
+          -webkit-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+          justify-content: center; /* Center horizontally */
+          align-items: center; /* Center vertically */
+          height: 100vh; /* Full viewport height */
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+          padding: 20px;
+        }
+
+        h1 {
+          line-height: .95;
+          color: #5d9ee3;
+          font-weight: 900;
+          font-size: 75px;
+          text-transform: uppercase;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          pointer-events: none;
+          width: 100%;
+          text-align: center;
+        }
+
+        .container {
+          background-color: rgba(0, 0, 0, 0.7);
+          border-radius: 10px;
+          padding: 30px;
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn {
+          margin: 10px auto;
+          width: 200px;
+          height: 50px;
+          padding: 8px 0 0 5px;
+          border: 2px solid #ffffff;
+          border-radius: 5px;
+          background: #5d9ee3;
+          font-size: 16px;
+          line-height: 42px;
+          color: #fff;
+          letter-spacing: .25em;
+          text-decoration: none;
+          font-weight: 600;
+          text-transform: uppercase;
+          vertical-align: middle;
+          text-align: center;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          -webkit-transition: background .4s, color .4s;
+          transition: background .4s, color .4s;
+          cursor: pointer;
+        }
+
+        .btn:hover {
+          background: #66fcf1;
+          color: #10151B;
+        }
+
+        .description {
+          color: #fff;
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HealthSage</h1>
+        <p class="description">Manage patient records, appointments, and more with ease.</p>
+        <div class="btn">
+            <a href="signup">Sign up</a>
+        </div>
+        <div class="btn">
+            <a href="login">Log in</a>
+        </div>
+    </div>
+</body>
+</html>
